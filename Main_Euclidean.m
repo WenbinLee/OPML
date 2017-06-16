@@ -5,13 +5,13 @@ clear  variables; close all; clc;
 benchpath = [pwd '\'];
 
 %% Load data
-data_UCI={ 'lsvt'; 'iris'; 'wine';  'glass';  'spect';  'ionosphere';  'balance'; 'breast';  'pima';  'segmentation';  'waveform'; 'optdigits'};
+data_UCI={ 'balance'; 'breast';  'pima';};
 data_path=[benchpath, '\Data Storage\'];
 data=dir([data_path, '*.mat']);
-Final_Results=zeros(12,2);
-Error_Rate_save = cell(12,1);
+Final_Results=zeros(3,2);
+Error_Rate_save = cell(3,1);
 
-for jjj=1:12
+for jjj=1:3
     data_name=data_UCI{jjj};
     load([data_path, data_name, '.mat']);
     
