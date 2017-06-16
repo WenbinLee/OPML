@@ -15,18 +15,18 @@ addpath([benchpath, 'OPML-Metric Learning']);
 
 
 %% Load data
-data_UCI={ 'lsvt'; 'iris'; 'wine';  'glass';  'spect';  'ionosphere';  'balance'; 'breast';  'pima';  'segmentation';  'waveform'; 'optdigits'};
+data_UCI={ 'balance'; 'breast';  'pima'; };
 data_path=[benchpath, '\Data Storage\'];
 
 % The  Hyper-parameter of OPML
 lambda =  1e-3;
 
-Final_Results=zeros(12,3);
-Error_Rate_save = cell(12,1);
-Run_Time_save = cell(12,1);
-Triplet_Pair_Num = zeros(12,2);
+Final_Results=zeros(3,3);
+Error_Rate_save = cell(3,1);
+Run_Time_save = cell(3,1);
+Triplet_Pair_Num = zeros(3,2);
 tic;
-for jjj=1:12
+for jjj=1:3
     data_name=data_UCI{jjj};
     load([data_path, data_name, '.mat']);
     S_num=length(random_data);
